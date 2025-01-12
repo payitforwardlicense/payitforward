@@ -1,0 +1,24 @@
+---
+import childProcess from 'node:child_process'
+import { version } from '../../package.json'
+import { Github } from 'lucide-static';
+import { GitFork } from 'lucide-static';
+
+import Icon from './Icon.astro';
+
+const { back, title } = Astro.props
+ 
+const hash = childProcess
+  .execSync("git rev-parse --short HEAD")
+  .toString()
+  .trim();
+---
+
+<hr />
+<footer>
+  <p><Icon icon={Github} size="14" /> <a href="/">Improve this page</a></p>
+  <Icon icon={GitFork} size="14" />
+
+Version: {version}
+Hash: {hash}
+</footer>

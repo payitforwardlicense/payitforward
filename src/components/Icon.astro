@@ -1,0 +1,9 @@
+---
+const size = Astro.props.size || 24
+let icon = Astro.props.icon
+icon = icon.replaceAll(/(width="24")|(height="24")/g, size)
+
+---
+<div style=`height: ${size}px; width: ${size}px; display: inline-block;` class="icon">
+  <Fragment set:html={icon}/>
+</div>

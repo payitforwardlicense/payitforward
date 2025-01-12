@@ -1,9 +1,12 @@
 ---
+import { ClientRouter } from 'astro:transitions';
 import '../style.scss'
+
+
 ---
 <!doctype html>
 <html lang="en" theme="cat">
-	<head>
+  <head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,11 +16,19 @@ import '../style.scss'
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Honk&family=Recursive:wght@300..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 		<title>{Astro.props.frontmatter.title}</title>
+		<ClientRouter />
 	</head>
 	<body>
 		<main class="page-content" aria-label="Content">
 				<slot />
 			</div>
 		</main>
+		<script>
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'Backspace' || event.key === 'Escape') {
+          window.history.back();
+        }
+      });
+    </script>
 	</body>
 </html>

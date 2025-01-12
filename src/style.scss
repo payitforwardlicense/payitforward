@@ -9,14 +9,25 @@
   }
 }
 
+@mixin link($color, $text) {
+  color: $color;
+  &:focus, &:hover {
+    color: $text;
+    background-color: $color;
+    border: 0;
+    outline: 0;
+  }
+}
+
 html {
   height: 100%;
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
   font-family: monospace;
-  line-height: 1.4;
+  line-height: 1.4rem;
   margin: 0;
   min-height: 100%;
   overflow-wrap: break-word;
@@ -30,9 +41,14 @@ h2, h3, h4, h5, h6 {
   margin-top: 1.5rem;
 }
 
-h1, h2, h3, h4, h5, h6, p, li {
+html * {
   font-size: 14px !important;
-  line-height: 1.7em;
+}
+
+h1, h2, h3, h4, h5, h6, p, li, a {
+  line-height: 1.5rem;
+  transition: all .3s ease;
+  font-family: Menlo, Monaspace Neon, monospace;
 }
 
 h2 {
@@ -49,7 +65,7 @@ p, ul {
 
 p, li {
   text-align: justify;
-  @include prefix('text-justify', 'distribute');
+  @include prefix(text-justify, distribute);
 }
 
 li {
@@ -59,10 +75,16 @@ li {
   list-style: none;
 }
 
+.icon {
+  vertical-align:top;
+  line-height: 1.8rem;
+}
+
 a.back {
   text-decoration: none;
-  margin-bottom: 1.5em;
-  display: block;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  clear:both;
 }
 
 main {
@@ -74,18 +96,20 @@ main {
 hr {
   border: 0;
   text-align: left;
-  margin: 1.5rem 0;
-  &:before { content: '---' }
-}
-
-table {
-  width: 100%;
-  th, td {
-    border: thin solid black;
-    border-collapse: collapse;
-    padding: 0.4rem;
+  margin: 1rem 0;
+  &:before {
+    content: '---'
   }
 }
+
+// table {
+//   width: 100%;
+//   th, td {
+//     border: thin solid black;
+//     border-collapse: collapse;
+//     padding: 0.4rem;
+//   }
+// }
 
 html[theme=atom]  {
   background-color: #282C34;
@@ -127,13 +151,16 @@ html[theme=cat] {
     color: #81C8BE;
   }
   a {
-    color: #CA9EE6;
+    @include link(#CA9EE6, #303446);
   }
   b, strong{
     color: #81C8BE;
   }
   p, li {
     color: #C6D0F5;
+  }
+  footer {
+    color: #7B829E;
   }
 }
 
@@ -162,13 +189,3 @@ html[theme=cat2] {
   }
 }
 
-html {
-  h1, h2, h3, h4, h5, b, p, a {
-    transition: all 2.3s ease;
-    font-family: Menlo, Monaspace Neon;
-  }
-}
-
-a:hover {
-  font-weight: 900;
-}
