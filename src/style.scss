@@ -1,0 +1,170 @@
+@font-face {
+  font-family: 'Monaspace Neon';
+  src: url(https://cdn.jsdelivr.net/gh/githubnext/monaspace@v1.000/fonts/webfonts/MonaspaceArgon-Regular.woff) format(woff2);
+}
+
+@mixin prefix($name, $value) {
+  @each $vendor in ('-webkit-', '-moz-', '-ms-', '-o-', '') {
+    #{$vendor}#{$name}: #{$value};
+  }
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: monospace;
+  line-height: 1.4;
+  margin: 0;
+  min-height: 100%;
+  overflow-wrap: break-word;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0;
+}
+
+h2, h3, h4, h5, h6 {
+  margin-top: 1.5rem;
+}
+
+h1, h2, h3, h4, h5, h6, p, li {
+  font-size: 14px !important;
+  line-height: 1.7em;
+}
+
+h2 {
+  &:before { content: '> ' }
+}
+
+ul {
+  padding: 0;
+}
+
+p, ul {
+  margin: .8rem 0;
+}
+
+p, li {
+  text-align: justify;
+  @include prefix('text-justify', 'distribute');
+}
+
+li {
+  &:before {
+    content: '- '
+  }
+  list-style: none;
+}
+
+*:target { background: yellow; }
+
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+hr {
+  border: 0;
+  text-align: left;
+  margin: 1.5rem 0;
+  &:before { content: '---' }
+}
+
+table {
+  width: 100%;
+  th, td {
+    border: thin solid black;
+    border-collapse: collapse;
+    padding: 0.4rem;
+  }
+}
+
+html[theme=atom]  {
+  background-color: #282C34;
+  h1 {
+    color: #98C379;
+  }
+  h2 {
+    color: #61AFEF;
+  }
+  h3 {
+    color: #E06C75;
+  }
+  a {
+    color: #C678DD;
+  }
+  h5 {
+    color: #ABB2BF;
+  }
+  p {
+    color: #ABB2BF;
+  }
+}
+
+html[theme=cat] {
+  background-color: #303446;
+  h1 {
+    color: #A6D189;
+  }
+  h2 {
+    color: #8CAAEE;
+  }
+  h3 {
+    color: #E78284;
+  }
+  h4 {
+    color: #EF9F76;
+  }
+  h5 {
+    color: #81C8BE;
+  }
+  a {
+    color: #CA9EE6;
+  }
+  b, strong{
+    color: #81C8BE;
+  }
+  p, li {
+    color: #C6D0F5;
+  }
+}
+
+html[theme=cat2] {
+  background-color: #303446;
+  h1 {
+    color: #A6D189;
+  }
+  h2 {
+    color: #99D1DB;
+  }
+  h3 {
+    color: #E78284;
+  }
+  h4 {
+    color: #EF9F76;
+  }
+  a {
+    color: #CA9EE6;
+  }
+  b, strong {
+    color: #81C8BE;
+  }
+  p {
+    color: #C6D0F5;
+  }
+}
+
+html {
+  h1, h2, h3, h4, h5, b, p, a {
+    transition: all 2.3s ease;
+    font-family: Menlo, Monaspace Neon;
+  }
+}
+
+a:hover {
+  font-weight: 900;
+}
