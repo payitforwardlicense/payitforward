@@ -1,13 +1,14 @@
 ---
 import childProcess from 'node:child_process'
+import path from 'node:path'
 import { version } from '../../package.json'
-import { Github } from 'lucide-static';
-import { GitFork } from 'lucide-static';
-
+import { Github, GitFork, Box } from 'lucide-static';
 import Icon from './Icon.astro';
 
 const { back, title } = Astro.props
- 
+const filename = import.meta.url.replace('file://', '').replace(path.resolve('./'), '')
+const githubUrl = 'https://github.com/payitforwardlicense/payitforward'
+
 const hash = childProcess
   .execSync("git rev-parse --short HEAD")
   .toString()
@@ -16,9 +17,10 @@ const hash = childProcess
 
 <hr />
 <footer>
-  <p><Icon icon={Github} size="14" /> <a href="/">Improve this page</a></p>
-  <Icon icon={GitFork} size="14" />
-
-Version: {version}
-Hash: {hash}
+  <ul>
+    <li><Icon icon={Github} size="14" /> <a href={githubUrl}>Join us on github</a></li>
+    <li><Icon icon={GitFork} size="14" /> <a href=`${githubUrl}${filename}`>Improve this page</a></li>
+    <li><Icon icon={Box} size="14" /> v{version} : {hash}</li>
+  </p>
+{filename}
 </footer>
