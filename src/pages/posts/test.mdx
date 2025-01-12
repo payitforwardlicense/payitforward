@@ -2,10 +2,12 @@
 layout: ../../layouts/Layout.astro
 title: asdasd
 ---
-export const title = 'sdfsdfMy asdfirst MDX post'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
 
-<a href="/">..</a>
+<Header title />
 
-<header>
-# {title}
-</header>
+- [Home](/home)
+- [License](/license)
+
+<Footer />

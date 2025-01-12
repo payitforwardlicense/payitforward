@@ -13,7 +13,6 @@
     "astro": "^5.1.5"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
     "sass-embedded": "^1.83.1",
     "lucide-static": "^0.471.0"
   }
