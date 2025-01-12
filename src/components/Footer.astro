@@ -1,11 +1,8 @@
 ---
 import childProcess from 'node:child_process'
-//import path from 'node:path'
-import { version } from '../../package.json'
+import { version, repository } from '../../package.json'
 import { Github, GitFork, Box } from 'lucide-static';
 import Icon from './Icon.astro';
-// const filename = import.meta.url.replace('file://', '').replace(path.resolve('./'), '')
-const githubUrl = 'https://github.com/payitforwardlicense/payitforward'
 const currentPath = Astro.url.pathname && Astro.url.pathname !== '/' ? Astro.url.pathname : 'index';
 
 const hash = childProcess
@@ -17,8 +14,8 @@ const hash = childProcess
 <hr />
 <footer>
   <ul>
-    <li><Icon icon={Github} size="14" /> <a href={githubUrl}>Join us on github</a></li>
-    <li><Icon icon={GitFork} size="14" /> <a href=`${githubUrl}/blob/main/src/pages/${currentPath}.mdx`>Improve this page</a></li>
+    <li><Icon icon={Github} size="14" /> <a href={repository.url}>Join us on github</a></li>
+    <li><Icon icon={GitFork} size="14" /> <a href=`${repository.url}/blob/main/src/pages/${currentPath}.mdx`>Improve this page</a></li>
     <li><Icon icon={Box} size="14" /> v{version} : {hash}</li>
   </p>
 </footer>

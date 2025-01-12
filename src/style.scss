@@ -63,6 +63,11 @@ p, ul {
   margin: .8rem 0;
 }
 
+ul ul {
+  padding-left: 1.2em;
+  margin: 0;
+}
+
 p, li {
   text-align: justify;
   @include prefix(text-justify, distribute);
@@ -86,11 +91,13 @@ footer li {
   line-height: 1.8rem;
 }
 
-a.back {
-  text-decoration: none;
-  margin-bottom: 1.5rem;
-  display: inline-block;
-  clear:both;
+.back {
+  a {
+    text-decoration: none;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    clear:both;
+  }
 }
 
 main {
@@ -107,15 +114,6 @@ hr {
     content: '---'
   }
 }
-
-// table {
-//   width: 100%;
-//   th, td {
-//     border: thin solid black;
-//     border-collapse: collapse;
-//     padding: 0.4rem;
-//   }
-// }
 
 html[theme=atom]  {
   background-color: #282C34;
@@ -165,7 +163,7 @@ html[theme=cat] {
   p, li {
     color: #C6D0F5;
   }
-  footer li:last-child {
+  footer li:last-child, hr {
     color: #7B829E;
   }
 }

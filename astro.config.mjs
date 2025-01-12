@@ -10,7 +10,7 @@ export default defineConfig({
     defaultStrategy: 'viewport',
   },
   experimental: {
-    clientPrerender: true,
+    //clientPrerender: true,
     svg: true,
   },
 })

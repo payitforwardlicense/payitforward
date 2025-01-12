@@ -1,0 +1,13 @@
+---
+import { collections } from '../content.config.js'
+import { getCollection, getEntry } from 'astro:content';
+const allBlogPosts = await getCollection('blog');
+console.log(allBlogPosts)
+//const poodleData = await getEntry('dogs', 'poodle')
+//const { Content, headings } = await render(entry);
+---
+
+{allBlogPosts && allBlogPosts.map((post) => {
+  console.log(post)
+  return <slot key={key} />
+})}

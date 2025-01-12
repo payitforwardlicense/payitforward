@@ -2,6 +2,10 @@
   "name": "payitforward",
   "type": "module",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/payitforwardlicense/payitforward"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -13,7 +17,8 @@
     "astro": "^5.1.5"
   },
   "devDependencies": {
-    "sass-embedded": "^1.83.1",
-    "lucide-static": "^0.471.0"
+    "@types/node": "^22.10.5",
+    "lucide-static": "^0.471.0",
+    "sass-embedded": "^1.83.1"
   }
 }

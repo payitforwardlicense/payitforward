@@ -2,5 +2,9 @@
 const { back, title } = Astro.props
 ---
 
-{back && <a href="/" class="back">..</a>}
+<div class="back">
+  {back && <a href="/">..</a>}
+  {!back && <a>&nbsp;</a>}
+
+</div>
 {title && <h1>THE PAY IT FORWARD LICENSE</h1>}
