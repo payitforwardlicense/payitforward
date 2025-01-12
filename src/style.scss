@@ -59,7 +59,11 @@ li {
   list-style: none;
 }
 
-*:target { background: yellow; }
+a.back {
+  text-decoration: none;
+  margin-bottom: 1.5em;
+  display: block;
+}
 
 main {
   max-width: 640px;
