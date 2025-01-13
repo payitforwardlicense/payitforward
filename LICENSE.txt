@@ -27,7 +27,8 @@ liability, whether in an action of contract, tort, or otherwise, arising from,
 out of, or in connection with the software or the use or other dealings in the
 software.
 
-Recipients of the Software are encouraged to contribute to the originating
-project, related projects, or the broader open-source community through actions
-including providing code, documentation, financial support, or other efforts
-that advance innovation and community growth.
+Recipients of the Software should pay it forward by contributing to the
+open-source community through actions including but not limited to providing
+code, documentation, tutorials, guides, support, feedback, or promoting
+open-source projects through advocacy or related efforts that advance
+innovation and community growth.

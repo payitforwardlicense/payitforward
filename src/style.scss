@@ -1,8 +1,3 @@
-@font-face {
-  font-family: 'Monaspace Neon';
-  src: url(https://cdn.jsdelivr.net/gh/githubnext/monaspace@v1.000/fonts/webfonts/MonaspaceArgon-Regular.woff) format(woff2);
-}
-
 @mixin prefix($name, $value) {
   @each $vendor in ('-webkit-', '-moz-', '-ms-', '-o-', '') {
     #{$vendor}#{$name}: #{$value};
@@ -18,6 +13,7 @@
     outline: 0;
   }
 }
+
 
 html {
   height: 100%;
@@ -48,11 +44,13 @@ html * {
 h1, h2, h3, h4, h5, h6, p, li, a {
   line-height: 1.5rem;
   transition: all .3s ease;
-  font-family: Menlo, Monaspace Neon, monospace;
+  font-family: monospace;
 }
 
 h2 {
-  &:before { content: '> ' }
+  &:before {
+    content: '> '
+  }
 }
 
 ul {
@@ -109,87 +107,112 @@ main {
 hr {
   border: 0;
   text-align: left;
-  margin: 1rem 0;
+  margin: 1.6rem 0 1rem 0;
   &:before {
     content: '---'
   }
 }
 
-html[theme=atom]  {
-  background-color: #282C34;
-  h1 {
-    color: #98C379;
-  }
-  h2 {
-    color: #61AFEF;
-  }
-  h3 {
-    color: #E06C75;
-  }
-  a {
-    color: #C678DD;
-  }
-  h5 {
-    color: #ABB2BF;
-  }
-  p {
-    color: #ABB2BF;
-  }
-}
-
-html[theme=cat] {
-  background-color: #303446;
-  h1 {
-    color: #A6D189;
-  }
-  h2 {
-    color: #8CAAEE;
-  }
-  h3 {
-    color: #E78284;
-  }
-  h4 {
-    color: #EF9F76;
-  }
-  h5 {
-    color: #81C8BE;
-  }
-  a {
-    @include link(#CA9EE6, #303446);
-  }
-  b, strong{
-    color: #81C8BE;
-  }
-  p, li {
-    color: #C6D0F5;
-  }
-  footer li:last-child, hr {
-    color: #7B829E;
+@mixin theme($name, $font, $color1, $color2, $color3, $color4, $color5, $color6, $color7, $color8, $color9, $color10) {
+  html[theme=#{$name}] {
+    background-color: $color1;
+    h1 {
+      color: $color4;
+    }
+    h2 {
+      color: $color5;
+    }
+    h3 {
+      color: $color6;
+    }
+    h4 {
+      color: $color7;
+    }
+    h5 {
+      color: $color8;
+    }
+    a {
+      @include link($color9, $color1);
+    }
+    b, strong, footer a {
+      color: $color10;
+    }
+    footer a {
+      @include link($color10, $color1);
+    }
+    p, li {
+      color: $color2;
+    }
+    footer li:last-child, hr {
+      color: $color3;
+    }
+    * {
+      font-family: #{$font};
+    }
   }
 }
 
-html[theme=cat2] {
-  background-color: #303446;
-  h1 {
-    color: #A6D189;
-  }
-  h2 {
-    color: #99D1DB;
-  }
-  h3 {
-    color: #E78284;
-  }
-  h4 {
-    color: #EF9F76;
-  }
-  a {
-    color: #CA9EE6;
-  }
-  b, strong {
-    color: #81C8BE;
-  }
-  p {
-    color: #C6D0F5;
-  }
-}
+// div.test {
+//   // Base
+//   color: #303446;
+//   // Rosewater
+//   color: #f2d5cf;
+//   // Flamingo
+//   color: #eebebe;
+//   // Pink
+//   color: #f4b8e4;
+//   // Mauve
+//   color: #ca9ee6;
+//   // Red
+//   color: #e78284;
+//   // Maroon
+//   color: #ea999c;
+//   // Peach
+//   color: #ef9f76;
+//   // Yellow
+//   color: #e5c890;
+//   // Green
+//   color: #a6d189;
+//   // Teal
+//   color: #81c8be;
+//   // Sky
+//   color: #99d1db;
+//   // Sapphire
+//   color: #85c1dc;
+//   // Blue
+//   color: #8caaee;
+//   // Lavender
+//   color: #babbf1;
+//   // Text
+//   color: #c6d0f5;
+// }
+// Menlo, Roboto Mono, Source Code Pro
+@include theme(
+  cat, // Name
+  "Roboto Mono, Source Code Pro, Menlo, monospace", // Font
+  #303446, // Background // Base
+  #C6D0F5, // Text // Text
+  #7B829E, // Footer and HR
+  #A6D189, // H1 // Greene
+  #8CAAEE, // H2 // Blue
+  #E78284, // H3 // Red
+  #EF9F76, // H4 // Peach
+  #81C8BE, // H5 // Teal
+  #CA9EE6, // Link color // Muave
+  #F4B8E4  // Strong and Bv // Pink
+);
 
+@include theme(
+  candy, // Name
+  "Roboto Mono, Source Code Pro, Menlo, monospace", // Font
+  #303446, // Background // Base
+  #C6D0F5, // Text // Text
+  #7C818B, // Footer and HR
+  #B2EAA3, // H1 // Greene
+  #6AC0E8, // H2 // Blue
+  #FCADE7, // H3 // Red
+  #EF9F76, // H4 // Peach
+  #81C8BE, // H5 // Teal
+  #BAA7F2, // Link color // Muave
+  #F1A6DE  // Strong and Bv // Pink
+);

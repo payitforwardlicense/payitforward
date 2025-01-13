@@ -1,13 +1,26 @@
 ---
-import { collections } from '../content.config.js'
 import { getCollection, getEntry } from 'astro:content';
 const allBlogPosts = await getCollection('blog');
-console.log(allBlogPosts)
-//const poodleData = await getEntry('dogs', 'poodle')
-//const { Content, headings } = await render(entry);
+
+const dateOptions: object = {
+	month: 'numeric',
+	day: 'numeric',
+};
+
+const getDate = (publishDate) => {
+  return `${publishDate.getFullYear()}-${(publishDate.getMonth() + 1).toString().padStart(2, '0')}-${publishDate.getDate().toString().padStart(2, '0')}`
+}
 ---
 
-{allBlogPosts && allBlogPosts.map((post) => {
-  console.log(post)
-  return <slot key={key} />
-})}
+<ul>
+  {allBlogPosts && allBlogPosts.map((post, key) => {
+    return (
+      <li>
+        {getDate(post.data.date)}
+        <a href={`/${post.data.slug}`}>
+           {post.data.title}
+        </a>
+      </li>
+    )
+  })}
+</ul>
