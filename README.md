@@ -1,1 +1,1 @@
-<$>
+![Pay it Forward](https://payitforwardlicense.com/appicon.png "Pay it Forward")

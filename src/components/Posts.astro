@@ -3,8 +3,8 @@ import { getCollection, getEntry } from 'astro:content';
 const allBlogPosts = await getCollection('blog');
 
 const dateOptions: object = {
-	month: 'numeric',
-	day: 'numeric',
+  month: 'numeric',
+  day: 'numeric',
 };
 
 const getDate = (publishDate) => {
