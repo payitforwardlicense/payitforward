@@ -16,9 +16,9 @@ const { Content } = await render(post);
 
 const frontmatter = { title: post.data.title }
 ---
+
 <Layout title={post.data.title}>
   <Header back />
-
   <h1>{post.data.title}</h1>
   <Content />
   <Footer />
