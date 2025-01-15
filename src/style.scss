@@ -56,12 +56,15 @@ h2 {
 ul {
   padding: 0;
 }
+ol {
+  padding: 0 0 0 1.6rem;
+}
 
-p, ul {
+p, ul, ol {
   margin: .8rem 0;
 }
 
-ul ul {
+ul ul, ol ol {
   padding-left: 1.2em;
   margin: 0;
 }
@@ -71,14 +74,18 @@ p, li {
   @include prefix(text-justify, distribute);
 }
 
-li {
+ul > li {
   &:before {
     content: '- '
   }
   list-style: none;
 }
 
-footer li {
+ol > li {
+
+}
+
+footer ul > li {
   &:before {
     content: ''
   }
