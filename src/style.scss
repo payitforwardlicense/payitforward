@@ -70,7 +70,12 @@ ul ul, ol ol {
 }
 
 p, li {
+  word-break: break-word;
+  hyphens: auto;
   text-align: justify;
+  text-wrap: pretty;
+  word-spacing: -1px;
+  letter-spacing: -.3px;
   @include prefix(text-justify, distribute);
 }
 
