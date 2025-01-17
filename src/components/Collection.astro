@@ -1,0 +1,24 @@
+---
+import { getCollection } from 'astro:content';
+const { collection } = Astro.props
+
+const allItems = await getCollection(collection);
+
+const getDate = (publishDate) => {
+  return `${publishDate.getFullYear()}-${(publishDate.getMonth() + 1).toString().padStart(2, '0')}-${publishDate.getDate().toString().padStart(2, '0')}`
+}
+---
+
+<ul>
+  {allItems && allItems.map(item => {
+    return (
+      <li>
+        {item.data.type === 'shop' && <span>{item.data.price}</span>}
+        {item.data.type === 'post' && <span>{getDate(item.data.date)}</span>}
+        <a href={`/${item.data.slug}`}>
+           {item.data.title}
+        </a>
+      </li>
+    )
+  })}
+</ul>

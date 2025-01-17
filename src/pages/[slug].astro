@@ -3,23 +3,43 @@ import Layout from '../layouts/Layout.astro'
 import { getCollection, render } from 'astro:content';
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
+import Post from '../components/Post.astro'
+import Shop from '../components/Shop.astro'
+
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
-  return posts.map(post => ({
-    params: { slug: post.data.slug },
-    props: { post }  }));
+  let posts = await getCollection('posts');
+  posts = posts.map(item => ({
+    params: { slug: item.data.slug },
+    props: { item, type: 'post' }
+  }));
+  let shop = await getCollection('shop');
+  shop = shop.map(item => ({
+    params: { slug: item.data.slug },
+    props: { item, type: 'shop' }
+  }));
+  return [
+    ...posts,
+    ...shop
+  ]
 }
 
-const { post } = Astro.props;
-const { Content } = await render(post);
-
-const frontmatter = { title: post.data.title }
+const { item, type } = Astro.props;
+const { Content } = await render(item);
+// const frontmatter = { title: item.data.title }
 ---
 
-<Layout title={post.data.title}>
+<Layout title={item.data.title}>
   <Header back />
-  <h1>{post.data.title}</h1>
-  <Content />
+  {type === 'shop' &&
+    <Shop item={item}>
+      <Content />
+    </Shop>
+  }
+  {type === 'post' &&
+    <Post item={item}>
+      <Content />
+    </Post>
+  }
   <Footer />
 </Layout>

@@ -85,10 +85,6 @@ ul > li {
   list-style: none;
 }
 
-ol > li {
-
-}
-
 footer ul > li {
   &:before {
     content: ''
@@ -113,6 +109,12 @@ main {
   max-width: 640px;
   margin: 0 auto;
   padding: 3rem 1rem;
+
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 hr {

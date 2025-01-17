@@ -1,0 +1,14 @@
+---
+const { item } = Astro.props
+---
+
+<h1>{item.data.title}</h1>
+<p>
+  <br />
+  <img src={item.data.image} title={item.data.title} alt={item.data.title} />
+</p>
+<h3>${item.data.price}</h3>
+<slot />
+<br />
+
+<a href={item.data.url}>&gt; Buy Now</a>
