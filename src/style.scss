@@ -160,6 +160,14 @@ hr {
     * {
       font-family: #{$font};
     }
+    ::selection {
+      color: $color1;
+      background: $color2;
+    }
+    ::-moz-selection {
+      color: red;
+      background: yellow;
+    }
   }
 }
 
