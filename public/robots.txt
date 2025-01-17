@@ -1,2 +1,4 @@
 User-agent: *
 Disallow:
+
+Sitemap: https://payitforwardlicense.com/sitemap-index.xml
