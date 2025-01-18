@@ -4,8 +4,8 @@ const backTo = Astro.url.pathname && Astro.url.pathname === '/menu' ? '/' : 'men
 ---
 
 <div class="back">
-  {back && <a href={backTo}>..</a>}
-  {menu && <a href="/menu">::</a>}
+  {back && <a href={backTo} aria-label="Back">..</a>}
+  {menu && <a href="/menu" aria-label="Menu">::</a>}
   {!back && !menu && <a>&nbsp;</a>}
 </div>
 {title && <h1>THE PAY IT FORWARD LICENSE</h1>}

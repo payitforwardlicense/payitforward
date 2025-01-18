@@ -1,12 +1,8 @@
 ---
 import { getCollection } from 'astro:content'
+import { formatDate } from '../lib/formatDate'
 const { collection } = Astro.props
-
 const allItems = await getCollection(collection)
-
-const getDate = (publishDate) => {
-  return `${publishDate.getFullYear()}-${(publishDate.getMonth() + 1).toString().padStart(2, '0')}-${publishDate.getDate().toString().padStart(2, '0')}`
-}
 ---
 
 <ul>
@@ -14,7 +10,7 @@ const getDate = (publishDate) => {
     return (
       <li>
         {collection === 'shop' && <span>${item.data.price}</span>}
-        {collection === 'posts' && <span>{getDate(item.data.date)}</span>}
+        {collection === 'posts' && <span>{formatDate(item.data.date)}</span>}
         <a href={`/${item.data.slug}`}>
            {item.data.title}
         </a>

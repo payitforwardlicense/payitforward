@@ -6,7 +6,6 @@ import Footer from '../components/Footer.astro'
 import Post from '../components/Post.astro'
 import Shop from '../components/Shop.astro'
 
-
 export async function getStaticPaths() {
   let posts = await getCollection('posts')
   posts = posts.map(item => ({
@@ -26,10 +25,13 @@ export async function getStaticPaths() {
 
 const { item, type } = Astro.props
 const { Content } = await render(item)
-// const frontmatter = { title: item.data.title }
 ---
 
-<Layout title={item.data.title}>
+<Layout
+  title={item.data.title}
+  type={type === 'post' ? 'article' : 'og:product'}
+  description={item.data.description}
+>
   <Header back />
   {type === 'shop' &&
     <Shop item={item}>

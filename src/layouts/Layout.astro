@@ -2,6 +2,10 @@
 import { ClientRouter } from 'astro:transitions'
 import '../reset.css'
 import '../style.scss'
+const title = Astro.props.frontmatter?.title || Astro.props.title
+const description = Astro.props.frontmatter?.description || Astro.props.description
+const type = Astro.props.frontmatter?.description || Astro.props.type || 'website'
+
 ---
 <!doctype html>
 <html lang="en" theme="cat">
@@ -9,6 +13,7 @@ import '../style.scss'
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="shortcut icon" type="image/png" href="/favicon.png" />
@@ -19,7 +24,11 @@ import '../style.scss'
     <meta property="og:image" content="/opengraph.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <title>{Astro.props.frontmatter?.title || Astro.props.title}</title>
+    <meta property="og:title" content={title} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content={type} />
+    <meta property="og:description" content={description} />
+    <title>{title}</title>
     <ClientRouter />
   </head>
   <body>
