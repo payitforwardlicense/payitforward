@@ -36,11 +36,14 @@ const type = Astro.props.frontmatter?.description || Astro.props.type || 'websit
       <slot />
     </main>
     <script>
+      const themes = ['cat', 'candy', 'vibrant']
       let theme = document.querySelector('html').getAttribute('theme')
       document.addEventListener('keydown', function(event) {
         if (event.key === 't') {
           let theme = document.querySelector('html').getAttribute('theme')
-          document.querySelector('html').setAttribute('theme', theme === 'cat' ? 'candy' : 'cat')
+          const themeIndex = themes.indexOf(theme)
+          const nextTheme = themes[(themeIndex + 1) % themes.length]
+          document.querySelector('html').setAttribute('theme', nextTheme)
         }
       })
       document.addEventListener('keydown', function(event) {
