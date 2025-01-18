@@ -8,6 +8,7 @@ const posts = defineCollection({
     date: z.date(),
     slug: z.string(),
     draft: z.boolean().default(true),
+    description: z.string().default(''),
   })
 })
 
@@ -21,6 +22,7 @@ const shop = defineCollection({
     price: z.number(),
     category: z.string(),
     url: z.string(),
+    description: z.string().default(''),
   })
 })
 

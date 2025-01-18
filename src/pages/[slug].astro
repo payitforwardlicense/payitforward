@@ -7,20 +7,16 @@ import Post from '../components/Post.astro'
 import Shop from '../components/Shop.astro'
 
 export async function getStaticPaths() {
-  let posts = await getCollection('posts')
-  posts = posts.map(item => ({
-    params: { slug: item.data.slug },
-    props: { item, type: 'post' }
-  }))
-  let shop = await getCollection('shop')
-  shop = shop.map(item => ({
-    params: { slug: item.data.slug },
-    props: { item, type: 'shop' }
-  }))
-  return [
-    ...posts,
-    ...shop
-  ]
+  const collections = ['posts', 'shop']
+  const paths = []
+  for (const collection of collections) {
+    const items = await getCollection(collection)
+    paths.push(...items.map(item => ({
+      params: { slug: item.data.slug },
+      props: { item, type: collection }
+    })))
+  }
+  return paths
 }
 
 const { item, type } = Astro.props
