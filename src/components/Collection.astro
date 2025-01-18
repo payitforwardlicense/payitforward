@@ -13,8 +13,8 @@ const getDate = (publishDate) => {
   {allItems && allItems.map(item => {
     return (
       <li>
-        {item.data.type === 'shop' && <span>{item.data.price}</span>}
-        {item.data.type === 'post' && <span>{getDate(item.data.date)}</span>}
+        {collection === 'shop' && <span>${item.data.price}</span>}
+        {collection === 'posts' && <span>{getDate(item.data.date)}</span>}
         <a href={`/${item.data.slug}`}>
            {item.data.title}
         </a>

@@ -11,6 +11,18 @@
     background-color: $color;
     border: 0;
     outline: 0;
+    font-weight: 900;
+  }
+}
+
+@mixin button($color, $text) {
+  color: $text;
+  background-color: $color;
+  &:focus, &:hover {
+    color: $color;
+    background-color: $text;
+    border: 0;
+    outline: 0;
   }
 }
 
@@ -110,7 +122,6 @@ main {
   margin: 0 auto;
   padding: 3rem 1rem;
 
-
   img {
     max-width: 100%;
     height: auto;
@@ -146,6 +157,9 @@ hr {
     }
     a {
       @include link($color9, $color1);
+    }
+    a.btn {
+      @include button($color9, $color1);
     }
     b, strong, footer a {
       color: $color10;

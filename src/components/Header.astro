@@ -1,9 +1,10 @@
 ---
 const { back, title, menu } = Astro.props
+const backTo = Astro.url.pathname && Astro.url.pathname === '/menu' ? '/' : 'menu'
 ---
 
 <div class="back">
-  {back && <a href="/">..</a>}
+  {back && <a href={backTo}>..</a>}
   {menu && <a href="/menu">::</a>}
   {!back && !menu && <a>&nbsp;</a>}
 </div>
