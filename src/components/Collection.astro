@@ -2,7 +2,11 @@
 import { getCollection } from 'astro:content'
 import { formatDate } from '../lib/formatDate'
 const { collection } = Astro.props
-const allItems = (await getCollection(collection)).sort((a, b) => {
+const allItems = (await getCollection(collection, ({ data }) => {
+  if (!import.meta.env.PROD) return true
+  if (data.date > new Date()) return false
+  return data.draft !== true
+})).sort((a, b) => {
   return b.data.date - a.data.date
 })
 ---

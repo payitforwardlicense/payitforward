@@ -37,6 +37,10 @@ h5 + p {
   margin-top: .4rem;
 }
 
+h1 + p:has(> img) {
+  margin-top: 1.8rem;
+}
+
 h1, h2, h3, h4, h5, h6, p, li, a {
   line-height: 1.5rem;
   transition: all .3s ease;
@@ -159,6 +163,7 @@ code {
 img::selection {
   background-color: rgba($terminalGreen, 1);
 }
+
 
 ::-moz-selection {
   color: $terminalBlack;

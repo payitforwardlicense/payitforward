@@ -1,0 +1,133 @@
+---
+title: How to Write a Great Pull Request
+slug: how-to-write-a-great-pr
+date: 2025-01-17
+draft: true
+---
+
+Pull requests (PRs) are the backbone of open-source collaboration. A well-crafted pull request improves your chances of having your contributions accepted, builds trust with maintainers, and makes the review process smoother for everyone involved. Here’s how to write a great pull request that stands out.
+
+---
+
+## 1. Understand the Project’s Contribution Guidelines
+
+Before you start contributing, check if the project has a `CONTRIBUTING.md` file or similar documentation. This file typically outlines:
+- The preferred branch for PRs.
+- Coding standards or style guides.
+- Testing requirements.
+- Any additional expectations for contributors.
+
+Following these guidelines shows respect for the project and its maintainers.
+
+---
+
+## 2. Keep Your Pull Request Focused
+
+Each pull request should address a single issue or feature. Avoid bundling multiple unrelated changes into one PR, as this makes the review process harder.
+
+**Example of a focused PR:**
+- Fixing a typo in documentation.
+- Resolving a specific bug.
+- Adding a single new feature.
+
+Keeping your PR focused makes it easier for maintainers to review and approve.
+
+---
+
+## 3. Write a Clear and Informative Title
+
+Your PR title should summarize what the request does. Avoid generic titles like "Bug fix" or "Update." Instead, be descriptive and concise.
+
+**Examples of good titles:**
+- "Fix typo in CONTRIBUTING.md"  
+- "Add support for environment variables in configuration"  
+- "Resolve crash on startup when configuration file is missing"  
+
+A clear title gives reviewers immediate context about your PR.
+
+---
+
+## 4. Provide a Detailed Description
+
+A well-written PR description helps maintainers understand your changes. Include the following:
+- **What**: A summary of the changes made.  
+- **Why**: The problem the PR solves or the feature it adds.  
+- **How**: Any details about how the changes were implemented.  
+- **Testing**: How you tested your changes and the results.
+
+**Example:**
+> ### What  
+> Fixed a typo in the CONTRIBUTING.md file.  
+>
+> ### Why  
+> The typo could confuse new contributors.  
+>
+> ### How  
+> Corrected "contirbutors" to "contributors" in line 45.  
+>
+> ### Testing  
+> Not applicable for this change.
+
+---
+
+## 5. Follow Coding Standards
+
+Adhere to the coding style used in the project. Consistent formatting helps maintain readability and avoids unnecessary feedback. Use tools like linters or code formatters if the project provides them.
+
+---
+
+## 6. Include Relevant Tests
+
+If your PR introduces new functionality or fixes a bug, write tests to verify the changes. Include details in your PR description about the tests added or updated.
+
+**Example:**
+> Added unit tests for the new login feature to cover both success and error cases.
+
+Tests demonstrate the reliability of your contribution and make it easier for maintainers to merge.
+
+---
+
+## 7. Add Screenshots or Examples (If Applicable)
+
+For UI changes or features with a visual component, include before-and-after screenshots or a GIF. This provides immediate context and saves reviewers time.
+
+**Example:**
+{/* > ### Before  
+> ![Before Screenshot](link-to-image)  
+>
+> ### After  
+> ![After Screenshot](link-to-image) */}
+
+---
+
+## 8. Be Respectful and Open to Feedback
+
+Maintain a positive and collaborative tone throughout the process. Respond to comments promptly and be willing to make changes based on feedback. Remember, maintainers are volunteers and may have limited time.
+
+**Example Response to Feedback:**
+> Thank you for the feedback! I’ve made the changes as suggested. Let me know if there’s anything else you’d like me to address.
+
+---
+
+## 9. Reference Relevant Issues or Discussions
+
+If your PR resolves an existing issue, link to it in the description using keywords like `Fixes #123` or `Closes #456`. This automatically closes the issue when the PR is merged and provides context for reviewers.
+
+---
+
+## 10. Test, Test, Test
+
+Before submitting your PR:
+- Ensure it compiles and runs correctly.
+- Verify it doesn’t break existing functionality.
+- Test in all relevant environments or configurations.
+
+Submitting untested code wastes time and risks introducing bugs into the project.
+
+---
+
+## Final Thoughts
+
+A great pull request is focused, clear, and respectful of the maintainers’ time. By following these tips, you can make your contributions stand out and ensure a smooth collaboration process.
+
+Do you have any other tips for writing effective pull requests? Share them with us at [your-email@example.com]!

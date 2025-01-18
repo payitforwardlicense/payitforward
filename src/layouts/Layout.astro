@@ -6,8 +6,8 @@ import '../theme.scss'
 const title = Astro.props.frontmatter?.title || Astro.props.title
 const description = Astro.props.frontmatter?.description || Astro.props.description
 const type = Astro.props.frontmatter?.description || Astro.props.type || 'website'
-
 ---
+
 <!doctype html>
 <html lang="en" theme="cat">
   <head>
@@ -37,7 +37,7 @@ const type = Astro.props.frontmatter?.description || Astro.props.type || 'websit
       <slot />
     </main>
     <script>
-      const themes = ['cat', 'candy', 'vibrant']
+      const themes = ['cat', 'candy', 'vibrant', 'catdark', 'catalt']
       let theme = document.querySelector('html').getAttribute('theme')
       document.addEventListener('keydown', function(event) {
         if (event.key === 't') {

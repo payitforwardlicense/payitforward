@@ -45,6 +45,52 @@
   #F1A6DE  // Strong and Bv // Pink
 );
 
+@include mixins.theme(
+  vibrant, // Name
+  'Roboto Mono, Source Code Pro, Menlo, monospace', // Font
+  #303446, // Background // Base
+  #C6D0F5, // Text // Text
+  #7C818B, // Footer and HR
+  #18E3D0, // H1 // Greene
+  #07B0F9, // H2 // Blue
+  #E32786, // H3 // Red
+  #E9735B, // H4 // Peach
+  #81C8BE, // H5 // Teal
+  #BAA7F2, // Link color // Muave
+  #F1A6DE  // Strong and Bv // Pink
+);
+
+@include mixins.theme(
+  catdark, // Name
+  'Roboto Mono, Source Code Pro, Menlo, monospace', // Font
+  #1E1E2E, // Background // Base
+  #C6D0F5, // Text // Text
+  #7F849C, // Footer and HR
+  #88E0A1, // H1 // Greene
+  #6DA8FA, // H2 // Blue
+  #EC8BA8, // H3 // Red
+  #FAB387, // H4 // Peach
+  #89DCEB, // H5 // Teal
+  #BAA7F2, // Link color // Muave
+  #F2CDCD  // Strong and Bv // Pink
+);
+
+@include mixins.theme(
+  catalt, // Name
+  'Roboto Mono, Source Code Pro, Menlo, monospace', // Font
+  #303446, // Background // Base
+  #C6D0F5, // Text // Text
+  #7B829E, // Footer and HR
+  #85c1dc, // H1 // Greene
+  #81c8be, // H2 // Blue
+  #e5c890, // H3 // Red
+  #EF9F76, // H4 // Peach
+  #81C8BE, // H5 // Teal
+  #CA9EE6, // Link color // Muave
+  #F4B8E4  // Strong and Bv // Pink
+);
+
+
 div.test {
   // Base
   color: #303446;
