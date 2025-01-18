@@ -1,0 +1,160 @@
+
+@use 'mixins.scss';
+
+$terminalGreen: #85F584;
+$terminalBlack: black;
+
+html {
+  height: 100%;
+  // scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: monospace;
+  line-height: 1.4rem;
+  margin: 0;
+  min-height: 100%;
+  overflow-wrap: break-word;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0;
+}
+
+h2, h3, h4, h5, h6 {
+  margin-top: 1.5rem;
+}
+
+@for $i from 6 through 2 {
+  @for $ii from 6 through 1 {
+    h#{$i} + h#{$ii} {
+      margin-top: .9rem;
+    }
+  }
+}
+
+// :where(ol, ul) :where(ol, ul) ol {
+//   list-style-type: lower-greek;
+//   color: chocolate;
+// }
+
+h5 + p {
+  margin-top: .4rem;
+}
+
+html * {
+  font-size: 14px !important;
+}
+
+h1, h2, h3, h4, h5, h6, p, li, a {
+  line-height: 1.5rem;
+  transition: all .3s ease;
+  font-family: monospace;
+}
+
+h2 {
+  &:before {
+    content: '> '
+  }
+}
+
+ul {
+  padding: 0;
+}
+
+ol {
+  padding: 0 0 0 1.6rem;
+}
+
+p, ul, ol {
+  margin: .8rem 0;
+}
+
+ul ul, ol ol {
+  // padding-left: 1.2em;
+  margin: 0;
+}
+
+p, li {
+  word-break: break-word;
+  hyphens: auto;
+  text-align: justify;
+  text-wrap: pretty;
+  word-spacing: -1px;
+  letter-spacing: -.3px;
+  @include mixins.prefix(text-justify, distribute);
+}
+
+ul li {
+  &:not(footer ul > li) {
+    list-style: none;
+    list-style-type: '-\00a0';
+    margin-left: 1rem;
+  }
+}
+
+footer ul li {
+  list-style-type: '';
+  margin-left: 0;
+}
+
+.icon {
+  vertical-align:top;
+  line-height: 1.8rem;
+}
+
+.back {
+  a {
+    text-decoration: none;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    clear:both;
+  }
+}
+
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+hr {
+  border: 0;
+  text-align: left;
+  margin: 1.7rem 0 1rem 0;
+  &:before {
+    content: '---'
+  }
+}
+
+code {
+  background-color: black;
+  padding: .1rem .2rem;
+}
+// a {
+//   padding: .1rem .4rem;
+// }
+
+.selecting {
+  background-color: $terminalBlack !important;
+  * {
+    color: $terminalGreen  !important;
+  }
+}
+
+::selection {
+  color: $terminalBlack;
+  background-color: rgba($terminalGreen, 0.99);
+  font-weight: 900;
+}
+
+::-moz-selection {
+  color: $terminalBlack;
+  background: $terminalGreen;
+}

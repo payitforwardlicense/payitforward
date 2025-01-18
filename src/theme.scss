@@ -1,0 +1,81 @@
+@use 'mixins.scss';
+
+@include mixins.theme(
+  cat, // Name
+  'Roboto Mono, Source Code Pro, Menlo, monospace', // Font
+  #303446, // Background // Base
+  #C6D0F5, // Text // Text
+  #7B829E, // Footer and HR
+  #A6D189, // H1 // Greene
+  #8CAAEE, // H2 // Blue
+  #E78284, // H3 // Red
+  #EF9F76, // H4 // Peach
+  #81C8BE, // H5 // Teal
+  #CA9EE6, // Link color // Muave
+  #F4B8E4  // Strong and Bv // Pink
+);
+
+@include mixins.theme(
+  candy, // Name
+  'Roboto Mono, Source Code Pro, Menlo, monospace', // Font
+  #303446, // Background // Base
+  #C6D0F5, // Text // Text
+  #7C818B, // Footer and HR
+  #B2EAA3, // H1 // Greene
+  #6AC0E8, // H2 // Blue
+  #FCADE7, // H3 // Red
+  #EF9F76, // H4 // Peach
+  #81C8BE, // H5 // Teal
+  #BAA7F2, // Link color // Muave
+  #F1A6DE  // Strong and Bv // Pink
+);
+
+@include mixins.theme(
+  vibrant, // Name
+  'Roboto Mono, Source Code Pro, Menlo, monospace', // Font
+  #303446, // Background // Base
+  #C6D0F5, // Text // Text
+  #7C818B, // Footer and HR
+  #18E3D0, // H1 // Greene
+  #07B0F9, // H2 // Blue
+  #E32786, // H3 // Red
+  #E9735B, // H4 // Peach
+  #81C8BE, // H5 // Teal
+  #BAA7F2, // Link color // Muave
+  #F1A6DE  // Strong and Bv // Pink
+);
+
+div.test {
+  // Base
+  color: #303446;
+  // Rosewater
+  color: #f2d5cf;
+  // Flamingo
+  color: #eebebe;
+  // Pink
+  color: #f4b8e4;
+  // Mauve
+  color: #ca9ee6;
+  // Red
+  color: #e78284;
+  // Maroon
+  color: #ea999c;
+  // Peach
+  color: #ef9f76;
+  // Yellow
+  color: #e5c890;
+  // Green
+  color: #a6d189;
+  // Teal
+  color: #81c8be;
+  // Sky
+  color: #99d1db;
+  // Sapphire
+  color: #85c1dc;
+  // Blue
+  color: #8caaee;
+  // Lavender
+  color: #babbf1;
+  // Text
+  color: #c6d0f5;
+}

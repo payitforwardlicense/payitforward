@@ -1,7 +1,8 @@
 ---
 import { ClientRouter } from 'astro:transitions'
 import '../reset.css'
-import '../style.scss'
+import '../global.scss'
+import '../theme.scss'
 const title = Astro.props.frontmatter?.title || Astro.props.title
 const description = Astro.props.frontmatter?.description || Astro.props.description
 const type = Astro.props.frontmatter?.description || Astro.props.type || 'website'
@@ -49,6 +50,15 @@ const type = Astro.props.frontmatter?.description || Astro.props.type || 'websit
       document.addEventListener('keydown', function(event) {
         if (event.key === 'Backspace' || event.key === 'Escape') {
           window.history.back()
+        }
+      })
+      document.addEventListener('selectionchange', () => {
+        const selection = document.getSelection()
+        const className = document.documentElement.className.replaceAll(' selecting', '')
+        if (selection && selection.toString().length > 0) {
+          document.documentElement.className = className + ' selecting'
+        } else {
+          document.documentElement.className = className
         }
       })
     </script>

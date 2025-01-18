@@ -2,7 +2,9 @@
 import { getCollection } from 'astro:content'
 import { formatDate } from '../lib/formatDate'
 const { collection } = Astro.props
-const allItems = await getCollection(collection)
+const allItems = (await getCollection(collection)).sort((a, b) => {
+  return b.data.date - a.data.date
+})
 ---
 
 <ul>

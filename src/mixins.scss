@@ -1,0 +1,57 @@
+
+@mixin prefix($name, $value) {
+  @each $vendor in ('-webkit-', '-moz-', '-ms-', '-o-', '') {
+    #{$vendor}#{$name}: #{$value};
+  }
+}
+
+@mixin link($color, $text) {
+  color: $color;
+  &:focus, &:hover {
+    color: $text;
+    background-color: $color;
+    border: 0;
+    outline: 0;
+    font-weight: 900;
+    text-decoration: none;
+  }
+}
+
+@mixin theme($name, $font, $color1, $color2, $color3, $color4, $color5, $color6, $color7, $color8, $color9, $color10) {
+  html[theme=#{$name}] {
+    background-color: $color1;
+    h1 {
+      color: $color4;
+    }
+    h2 {
+      color: $color5;
+    }
+    h3 {
+      color: $color6;
+    }
+    h4 {
+      color: $color7;
+    }
+    h5 {
+      color: $color8;
+    }
+    a {
+      @include link($color9, $color1);
+    }
+    b, strong, footer a {
+      color: $color10;
+    }
+    footer a {
+      @include link($color10, $color1);
+    }
+    p, li {
+      color: $color2;
+    }
+    footer li:last-child, hr {
+      color: $color3;
+    }
+    * {
+      font-family: #{$font};
+    }
+  }
+}
