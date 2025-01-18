@@ -53,8 +53,15 @@ ul {
   padding: 0;
 }
 
+@counter-style numbers {
+  system: numeric;
+  symbols: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9';
+  suffix: '  ';
+  pad: 3 '0';
+}
+
 ol {
-  padding: 0 0 0 1.6rem;
+  list-style: numbers;
 }
 
 p, ul, ol {
@@ -62,7 +69,6 @@ p, ul, ol {
 }
 
 ul ul, ol ol {
-  // padding-left: 1.2em;
   margin: 0;
 }
 
@@ -127,14 +133,14 @@ code {
   background-color: black;
   padding: .1rem .2rem;
 }
-// a {
-//   padding: .1rem .4rem;
-// }
 
 .selecting {
   background-color: $terminalBlack !important;
   * {
     color: $terminalGreen  !important;
+  }
+  li::marker {
+    color: $terminalGreen !important;
   }
 }
 
@@ -145,6 +151,7 @@ code {
   -webkit-text-stroke-color: rgba($terminalGreen, .2);
   -webkit-text-stroke-width: 4px;
 }
+
 ::-moz-selection {
   color: $terminalBlack;
   background: $terminalGreen;
