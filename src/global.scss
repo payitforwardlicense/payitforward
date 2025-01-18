@@ -9,6 +9,10 @@ html {
   font-size: 16px;
 }
 
+html * {
+  font-size: 14px !important;
+}
+
 body {
   font-family: monospace;
   line-height: 1.4rem;
@@ -33,10 +37,6 @@ h5 + p {
   margin-top: .4rem;
 }
 
-html * {
-  font-size: 14px !important;
-}
-
 h1, h2, h3, h4, h5, h6, p, li, a {
   line-height: 1.5rem;
   transition: all .3s ease;
@@ -49,10 +49,6 @@ h2 {
   }
 }
 
-ul {
-  padding: 0;
-}
-
 @counter-style numbers {
   system: numeric;
   symbols: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9';
@@ -62,6 +58,10 @@ ul {
 
 ol {
   list-style: numbers;
+}
+
+ul {
+  padding: 0;
 }
 
 p, ul, ol {
@@ -130,7 +130,7 @@ hr {
 }
 
 code {
-  background-color: black;
+  background-color: $terminalBlack;
   padding: .1rem .2rem;
 }
 
@@ -142,14 +142,22 @@ code {
   li::marker {
     color: $terminalGreen !important;
   }
+  a:hover {
+    background-color: $terminalGreen !important;
+    color: $terminalBlack !important;
+  }
+  img {
+    filter: grayscale(100%) sepia(100%) saturate(200%) hue-rotate(58deg) brightness(50%) contrast(300%) brightness(300%);
+  }
 }
 
-::selection {
-  color: rgba(0,0,0,1);
+*:not(img)::selection {
+  color: rgba($terminalBlack,1);
   background-color: rgba($terminalGreen, 0.99);
-  -webkit-text-fill-color: #000000;
-  -webkit-text-stroke-color: rgba($terminalGreen, .2);
-  -webkit-text-stroke-width: 4px;
+}
+
+img::selection {
+  background-color: rgba($terminalGreen, 1);
 }
 
 ::-moz-selection {
