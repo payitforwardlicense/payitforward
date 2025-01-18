@@ -3,10 +3,10 @@ import childProcess from 'node:child_process'
 import { version, repository } from '../../package.json'
 import { Github, GitFork, Box, ShoppingBag } from 'lucide-static'
 import Icon from './Icon.astro'
-const currentPath = Astro.url.pathname && Astro.url.pathname !== '/' ? Astro.url.pathname : 'index'
 
+const currentPath = Astro.url.pathname && Astro.url.pathname !== '/' ? Astro.url.pathname : 'index'
 const hash = childProcess
-  .execSync("git rev-parse --short HEAD")
+  .execSync('git rev-parse --short HEAD')
   .toString()
   .trim()
 ---

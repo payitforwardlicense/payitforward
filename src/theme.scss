@@ -90,6 +90,22 @@
   #F4B8E4  // Strong and Bv // Pink
 );
 
+@include mixins.theme(
+  test, // Name
+  'Roboto Mono, Source Code Pro, Menlo, monospace', // Font
+  #274653, // Background // Base
+  #C6D0F5, // Text // Text
+  #7B829E, // Footer and HR
+  #299D8F, // H1 // Greene
+  #E9C46A, // H2 // Blue
+  #F4A261, // H3 // Red
+  #E76F51, // H4 // Peach
+  #81C8BE, // H5 // Teal
+  #F4A261, // Link color // Muave
+  #F4B8E4  // Strong and Bv // Pink
+);
+
+
 
 div.test {
   // Base

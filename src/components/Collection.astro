@@ -11,7 +11,7 @@ const allItems = (await getCollection(collection, ({ data }) => {
 })
 ---
 
-<ul>
+<ul class="collection">
   {allItems && allItems.map(item => {
     return (
       <li>

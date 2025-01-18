@@ -86,6 +86,10 @@ p, li {
   @include mixins.prefix(text-justify, distribute);
 }
 
+.collection li {
+  text-align: left;
+}
+
 ul li {
   &:not(footer ul > li) {
     list-style: none;
@@ -155,15 +159,14 @@ code {
   }
 }
 
-*:not(img)::selection {
-  color: rgba($terminalBlack,1);
-  background-color: rgba($terminalGreen, 0.99);
-}
-
 img::selection {
   background-color: rgba($terminalGreen, 1);
 }
 
+*:not(img)::selection {
+  color: rgba($terminalBlack,1);
+  background-color: rgba($terminalGreen, 0.99);
+}
 
 ::-moz-selection {
   color: $terminalBlack;
