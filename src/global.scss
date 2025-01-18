@@ -1,4 +1,3 @@
-
 @use 'mixins.scss';
 
 $terminalGreen: #85F584;
@@ -26,18 +25,9 @@ h2, h3, h4, h5, h6 {
   margin-top: 1.5rem;
 }
 
-@for $i from 6 through 2 {
-  @for $ii from 6 through 1 {
-    h#{$i} + h#{$ii} {
-      margin-top: .9rem;
-    }
-  }
+:is(h2, h3, h4, h5, h6) + :is(h1, h2, h3, h4, h5, h6) {
+  margin-top: .9rem;
 }
-
-// :where(ol, ul) :where(ol, ul) ol {
-//   list-style-type: lower-greek;
-//   color: chocolate;
-// }
 
 h5 + p {
   margin-top: .4rem;
@@ -149,11 +139,12 @@ code {
 }
 
 ::selection {
-  color: $terminalBlack;
+  color: rgba(0,0,0,1);
   background-color: rgba($terminalGreen, 0.99);
-  font-weight: 900;
+  -webkit-text-fill-color: #000000;
+  -webkit-text-stroke-color: rgba($terminalGreen, .2);
+  -webkit-text-stroke-width: 4px;
 }
-
 ::-moz-selection {
   color: $terminalBlack;
   background: $terminalGreen;
