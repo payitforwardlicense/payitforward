@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import { getCollection, render } from 'astro:content';
+import { getCollection, render } from 'astro:content'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import Post from '../components/Post.astro'
@@ -8,24 +8,24 @@ import Shop from '../components/Shop.astro'
 
 
 export async function getStaticPaths() {
-  let posts = await getCollection('posts');
+  let posts = await getCollection('posts')
   posts = posts.map(item => ({
     params: { slug: item.data.slug },
     props: { item, type: 'post' }
-  }));
-  let shop = await getCollection('shop');
+  }))
+  let shop = await getCollection('shop')
   shop = shop.map(item => ({
     params: { slug: item.data.slug },
     props: { item, type: 'shop' }
-  }));
+  }))
   return [
     ...posts,
     ...shop
   ]
 }
 
-const { item, type } = Astro.props;
-const { Content } = await render(item);
+const { item, type } = Astro.props
+const { Content } = await render(item)
 // const frontmatter = { title: item.data.title }
 ---
 

@@ -1,8 +1,8 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection } from 'astro:content'
 const { collection } = Astro.props
 
-const allItems = await getCollection(collection);
+const allItems = await getCollection(collection)
 
 const getDate = (publishDate) => {
   return `${publishDate.getFullYear()}-${(publishDate.getMonth() + 1).toString().padStart(2, '0')}-${publishDate.getDate().toString().padStart(2, '0')}`
