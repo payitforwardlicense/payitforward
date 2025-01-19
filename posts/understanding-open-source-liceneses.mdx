@@ -4,8 +4,12 @@ slug: understanding-open-source-licenses
 date: 2025-01-20
 draft: true
 ---
-import { Check } from 'lucide-static'
+import { Check, X } from 'lucide-static'
+//cancel • close • delete • remove • times • clear • math • multiply • multiplication
+
 import Icon from '@/components/Icon.astro'
+export const Yes = () => <Icon icon={Check} size="14" />
+export const No = () => <Icon icon={X} size="14" />
 
 
 Choosing the right open-source license for your project is an important decision that affects how others can use, modify, and share your work. With many options available, each with unique terms and conditions, it's crucial to understand the differences to make an informed choice.
@@ -75,22 +79,22 @@ Projects that aim to balance openness and community collaboration without enforc
 
 ---
 
-#### Licensing Comparison: PIF vs. MIT, Apache 2.0, and GPL
+## Licensing Comparison: PIF vs. MIT, Apache 2.0, and GPL
 
-| Feature                     | Pay It Forward License (PIF) | MIT License           | Apache 2.0 License      | GPL License          |
-|-----------------------------|-----------------------------|-----------------------|-------------------------|----------------------|
-| **Modify**    | Yes                         | Yes                   | Yes                     | Yes                  |
-| **Distribute**| Yes                         | Yes                   | Yes                     | Yes                  |
-| **Commercial**          | Yes                         | Yes                   | Yes                     | Yes                  |
-| **Attributio**    | Yes                         | Yes                   | Yes                     | Yes                  |
-| **Patent Grant**            | Yes* | No                    | Yes*                     | No                   |
-| **Copyleft Reqs**   | No                          | No                    | No                      | Yes                  |
-| **Encourages Contributions**| Yes                         | No                    | No                      | No                   |
-| **Enforcement of Contributions** | No                   | No                    | No                      | Yes                  |
-| **Warranty Disclaimer**     | Yes                         | Yes                   | Yes                     | Yes                  |
-| **Termination Clause**      | Yes*    | No                    | Yes* | No                   |
+Key features and differences between the **Pay It Forward License (PIF)** and other popular licenses:
 
-\* Includes a revocation clause for patent misuse.
+| Feature             | PIF                          | MIT            | Apache 2.0       | GPL           |
+|---------------------|------------------------------|----------------|------------------|---------------|
+| Modify              | <Yes />                      | <Yes />        | <Yes />          | <Yes />       |
+| Distribute          | <Yes />                      | <Yes />        | <Yes />          | <Yes />       |
+| Commercial          | <Yes />                      | <Yes />        | <Yes />          | <Yes />       |
+| Attribution         | <Yes />                      | <Yes />        | <Yes />          | <Yes />       |
+| Warranty Disclaimer | <Yes />                      | <Yes />        | <Yes />          | <Yes />       |
+| Patent Grant        | <Yes /><sup>*</sup>          | <No />         | <Yes /><sup>*</sup> | <No />        |
+| Contributions       | Encouraged                   | <No />         | <No />           | Required      |
+
+<br />
+<sub>\* Includes a revocation clause for patent misuse.</sub>
 
 ---
 

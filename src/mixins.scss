@@ -43,10 +43,10 @@
     footer a {
       @include link($color10, $color1);
     }
-    p, li {
+    p, li, td {
       color: $color2;
     }
-    footer li:last-child, hr {
+    footer li:last-child, hr, sub {
       color: $color3;
     }
     * {

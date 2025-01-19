@@ -76,7 +76,7 @@ ul ul, ol ol {
   margin: 0;
 }
 
-p, li {
+p, li, td {
   word-break: break-word;
   hyphens: auto;
   text-align: justify;
@@ -171,4 +171,39 @@ img::selection {
 ::-moz-selection {
   color: $terminalBlack;
   background: $terminalGreen;
+}
+
+table {
+  width: 100%;
+  :is(td, th) {
+    white-space: nowrap;
+    min-width: 2rem;
+  }
+  :is(td, th):not(:first-child):not(:last-child) {
+    text-align: center;
+    padding: 0 .5em;
+  }
+  :is(td, th):first-child {
+    text-align: left;
+    width: 100%;
+  }
+  :is(td, th):last-child {
+    text-align: right;
+  }
+
+  td:has(> sup) {
+    &:before {
+      content: '\00a0';
+      font-size: .5rem !important;
+    }
+  }
+
+  sup {
+    font-size: 0 !important;
+    &:after {
+      content: '*';
+      font-size: .5rem !important;
+    }
+
+  }
 }
