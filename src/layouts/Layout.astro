@@ -1,8 +1,8 @@
 ---
 import { ClientRouter } from 'astro:transitions'
-import '../reset.css'
-import '../global.scss'
-import '../theme.scss'
+import '@/reset.css'
+import '@/global.scss'
+import '@/theme.scss'
 const title = Astro.props.frontmatter?.title || Astro.props.title
 const description = Astro.props.frontmatter?.description || Astro.props.description
 const type = Astro.props.frontmatter?.description || Astro.props.type || 'website'

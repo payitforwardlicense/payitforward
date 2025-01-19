@@ -1,10 +1,10 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import Layout from '@/layouts/Layout.astro'
 import { getCollection, render } from 'astro:content'
-import Header from '../components/Header.astro'
-import Footer from '../components/Footer.astro'
-import Post from '../components/Post.astro'
-import Shop from '../components/Shop.astro'
+import Header from '@/components/Header.astro'
+import Footer from '@/components/Footer.astro'
+import Post from '@/components/Post.astro'
+import Shop from '@/components/Shop.astro'
 
 export async function getStaticPaths() {
   const collections = ['posts', 'shop']
