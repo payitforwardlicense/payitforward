@@ -1,4 +1,4 @@
-<img src="https://payitforwardlicense.com/favicon.png" style="max-width: 280px; padding-left: 40px" alt="Pay it Forward" title="Pay it Forward" align="right" />
+<img src="https://payitforwardlicense.com/favicon.png" width="280" style="max-width: 280px; padding-left: 40px" alt="Pay it Forward" title="Pay it Forward" align="right" />
 
 ## The Pay it Forward License
 <br />
