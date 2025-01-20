@@ -9,7 +9,7 @@ const type = Astro.props.frontmatter?.description || Astro.props.type || 'websit
 ---
 
 <!doctype html>
-<html lang="en" theme="cat">
+<html lang="en" theme="crtorange" class="smooth-disabled">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -39,7 +39,7 @@ const type = Astro.props.frontmatter?.description || Astro.props.type || 'websit
     <script>
       //const themes = ['cat', 'candy', 'vibrant', 'catdark', 'catalt', 'test']
       //const themes = ['lazerwave','solarized', 'radical', 'cat']
-      const themes = ['lazerwave']
+      const themes = ['crtorange', 'paddy', 'cat']
 
       document.addEventListener('keydown', function(event) {
         if (event.key === 't') {
@@ -54,15 +54,15 @@ const type = Astro.props.frontmatter?.description || Astro.props.type || 'websit
           window.history.back()
         }
       })
-      document.addEventListener('selectionchange', () => {
-        const selection = document.getSelection()
-        const className = document.documentElement.className.replaceAll(' selecting', '')
-        if (selection && selection.toString().length > 0) {
-          document.documentElement.className = className + ' selecting'
-        } else {
-          document.documentElement.className = className
-        }
-      })
+      // document.addEventListener('selectionchange', () => {
+      //   const selection = document.getSelection()
+      //   const className = document.documentElement.className.replaceAll(' selecting', '')
+      //   if (selection && selection.toString().length > 0) {
+      //     document.documentElement.className = className + ' selecting'
+      //   } else {
+      //     document.documentElement.className = className
+      //   }
+      // })
     </script>
   </body>
 </html>

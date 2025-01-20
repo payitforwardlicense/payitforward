@@ -22,7 +22,7 @@ By choosing the PIF, you join a global movement that values innovation and commu
 ## Steps to Adopt the PIF
 
 ### 1. Review the License Terms
-Before adopting the PIF, it’s important to review its terms to ensure it aligns with your project’s goals. The full license text can be found [here](link-to-license).
+Before adopting the PIF, it’s important to review its terms to ensure it aligns with your project’s goals. The full license text can be found [here](/license).
 
 ### 2. Add the PIF to Your Repository
 To officially adopt the PIF:
@@ -32,7 +32,7 @@ To officially adopt the PIF:
 
 **Example for README:**
 ```markdown
-This project is licensed under the [Pay It Forward License (PIF)](link-to-license).
+This project is licensed under the [Pay It Forward License (PIF)](/license).
 ```
 
 ### 3. Attribute the PIF
@@ -62,6 +62,49 @@ Adopting the PIF is a statement of your commitment to the open-source community.
 **Example Badge Markdown:**
 ```markdown
 [![PIF License](https://img.shields.io/badge/license-PIF-blue)](link-to-license)
+```
+```js
+Adopting the PIF is a statement of your commitment to the open-source community. Share your decision by:
+
+Announcing it on your project’s blog or social media.
+Adding a badge to your repository that links to the PIF.
+
+
+export default defineConfig({
+  site: 'https://payitforwardlicense.com',
+  integrations: [mdx(), sitemap()],
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: 'viewport',
+  },
+  experimental: {
+    clientPrerender: true,
+    svg: true,
+  },
+  markdown: {
+    shikiConfig: {
+      themes: {
+        light: 'github-dark',
+        dark: 'github-dark',
+      },
+    },
+  },
+})
+
+const shop = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './shop' }),
+  schema: z.object({
+    title: z.string(),
+    date: z.date(),
+    slug: z.string(),
+    image: z.string(),
+    price: z.number(),
+    category: z.string(),
+    url: z.string(),
+    description: z.string().default(''),
+  })
+})
+
 ```
 
 ---

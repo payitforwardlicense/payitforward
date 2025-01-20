@@ -19,41 +19,56 @@
 @mixin theme($name, $font, $color1, $color2, $color3, $color4, $color5, $color6, $color7, $color8, $color9, $color10) {
   html[theme=#{$name}] {
     background-color: $color1;
+
     h1 {
       color: $color4;
     }
+
     h2 {
       color: $color5;
     }
+
     h3 {
       color: $color6;
     }
+
     h4 {
       color: $color7;
     }
+    
     h5 {
       color: $color8;
     }
+
     a {
       @include link($color9, $color1);
     }
+
     b, strong, footer a {
       color: $color10;
     }
+
     footer a {
       @include link($color10, $color1);
     }
+
     p, li, td {
       color: $color2;
     }
+
     footer li:last-child, hr, sub {
       color: $color3;
     }
+
     * {
       font-family: #{$font};
     }
+
     li::marker {
       color: $color3;
+    }
+    
+    code, pre {
     }
   }
 }
