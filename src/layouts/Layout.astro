@@ -38,7 +38,9 @@ const type = Astro.props.frontmatter?.description || Astro.props.type || 'websit
     </main>
     <script>
       //const themes = ['cat', 'candy', 'vibrant', 'catdark', 'catalt', 'test']
-      const themes = ['solarized', 'radical', 'cat']
+      //const themes = ['lazerwave','solarized', 'radical', 'cat']
+      const themes = ['lazerwave']
+
       document.addEventListener('keydown', function(event) {
         if (event.key === 't') {
           let theme = document.querySelector('html').getAttribute('theme')
