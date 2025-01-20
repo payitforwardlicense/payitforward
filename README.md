@@ -1,6 +1,7 @@
+# The Pay it Forward License
+
 <img src="https://payitforwardlicense.com/favicon.png" width="280" style="max-width: 280px; padding-left: 40px" alt="Pay it Forward" title="Pay it Forward" align="right" />
 
-## The Pay it Forward License
 <br />
 
 [![PIF License](https://img.shields.io/badge/License-PIF-blueviolet?style=for-the-badge&labelColor=555&color=268BD2 "PIF License")](https://payitforwardlicense.com/license)
