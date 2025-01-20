@@ -105,7 +105,35 @@
   #F4B8E4  // Strong and Bv // Pink
 );
 
+@include mixins.theme(
+  radical, // Name
+  'Roboto Mono, Source Code Pro, Menlo, monospace', // Font
+  #141322, // Background // Base
+  #B4DAE9, // Text // Text
+  rgba(#B4DAE9, .3), // Footer and HR
+  #FB4293, // H1 // Greene
+  #A4FFE4, // H2 // Blue
+  #E5FCA6, // H3 // Red
+  #8CE1E7, // H4 // Peach
+  #E5FCA6, // H5 // Teal
+  #F37AB0, // Link color // Muave
+  #F37AB0  // Strong and Bv // Pink
+);
 
+@include mixins.theme(
+  solarized, // Name
+  'Roboto Mono, Source Code Pro, Menlo, monospace', // Font
+  #002B36, // Background // Base
+  #98abad, // Text // Text
+  rgba(#586E75, .3), // Footer and HR
+  #6C71C4, // H1 // Greene
+  #268BD2, // H2 // Blue
+  #268BD2, // H3 // Red
+  #2AA198, // H4 // Peach
+  #2AA198, // H5 // Teal859900
+  #CB4B16, // Link color // Muave
+  #CB4B16  // Strong and Bv // Pink
+);
 
 div.test {
   // Base
