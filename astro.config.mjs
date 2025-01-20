@@ -24,9 +24,9 @@ export default defineConfig({
       //   dark: 'github-dark',
       // },
       theme: 
-        `andromeeda`
-        // `aurora-x`
-        // `ayu-dark`
+        // `andromeeda`
+        //`aurora-x`
+         `ayu-dark`
         // `catppuccin-frappe`
         // `catppuccin-macchiato`
         // `catppuccin-mocha`

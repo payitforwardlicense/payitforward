@@ -63,49 +63,6 @@ Adopting the PIF is a statement of your commitment to the open-source community.
 ```markdown
 [![PIF License](https://img.shields.io/badge/license-PIF-blue)](link-to-license)
 ```
-```js
-Adopting the PIF is a statement of your commitment to the open-source community. Share your decision by:
-
-Announcing it on your project’s blog or social media.
-Adding a badge to your repository that links to the PIF.
-
-
-export default defineConfig({
-  site: 'https://payitforwardlicense.com',
-  integrations: [mdx(), sitemap()],
-  prefetch: {
-    prefetchAll: true,
-    defaultStrategy: 'viewport',
-  },
-  experimental: {
-    clientPrerender: true,
-    svg: true,
-  },
-  markdown: {
-    shikiConfig: {
-      themes: {
-        light: 'github-dark',
-        dark: 'github-dark',
-      },
-    },
-  },
-})
-
-const shop = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './shop' }),
-  schema: z.object({
-    title: z.string(),
-    date: z.date(),
-    slug: z.string(),
-    image: z.string(),
-    price: z.number(),
-    category: z.string(),
-    url: z.string(),
-    description: z.string().default(''),
-  })
-})
-
-```
 
 ---
 

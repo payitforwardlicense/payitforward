@@ -79,7 +79,7 @@ ul ul, ol ol {
   margin: 0;
 }
 
-p, li, td, code {
+p, li, td, th, code {
   word-break: break-word;
   hyphens: auto;
   text-align: justify;
@@ -221,4 +221,14 @@ table {
       font-size: .5rem !important;
     }
   }
+}
+
+blockquote {
+  margin: 1.5rem 0;
+  padding: 0 1rem;
+  border-left: 5px solid;
+}
+
+img {
+  display: inline-block
 }

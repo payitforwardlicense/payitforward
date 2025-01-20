@@ -1,0 +1,252 @@
+---
+title: Syntax test
+slug: syntax-test
+date: 2000-01-18
+draft: true
+---
+import { Check, X } from 'lucide-static'
+import Icon from '@/components/Icon.astro'
+export const Yes = () => <Icon icon={Check} size="14" />
+export const No = () => <Icon icon={X} size="14" />
+
+
+# h1 title test
+## h2 title test
+### h3 title test
+#### h4 title test
+##### h5 title test
+###### h6 title test
+**bold test**
+
+*italic test*
+
+An open-source license for innovation, creativity and flexibility, empowering developers, companies, and communities to thrive by fostering a global movement of knowledge-sharing, ethical technology development, and contributions to the greater awesomeness.
+
+> An open-source license for innovation, creativity and flexibility, empowering developers, companies, and communities to thrive by fostering a global movement of knowledge-sharing, ethical technology development, and contributions to the greater awesomeness.
+
+- List item 1
+- List item 2
+
+1. Ordered item 1
+2. Ordered item 2
+
+An `open-source` license for innovation, creativity and flexibility, empowering developers, companies, and communities to thrive by fostering a global movement of knowledge-sharing, ethical technology development, and contributions to the greater awesomeness.
+
+[![PIF License](https://img.shields.io/badge/License-PIF-blueviolet?style=flat-square "PIF License")](https://payitforwardlicense.com/license)
+
+[![PIF License](https://img.shields.io/badge/License-PIF-blueviolet " License ")](https://payitforwardlicense.com/license)
+
+[![PIF License](https://img.shields.io/badge/License-PIF-blueviolet?style=for-the-badge&labelColor=555&color=268BD2 "PIF License")](https://payitforwardlicense.com/license)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/piffoundation/payitforward/astro-pages.yaml?branch=main&style=for-the-badge&label=Build&labelColor=555&color=A6D189 "GitHub Actions Workflow Status")](https://github.com/piffoundation/payitforward/actions)
+
+[PIF License](/test)
+
+
+
+| Feature             | PIF                          | MIT            | Apache 2.0       | GPL           |
+|---------------------|------------------------------|----------------|------------------|---------------|
+| Modify              | <Yes />                      | <Yes />        | <Yes />          | <Yes />       |
+| Patent Grant        | <Yes /><sup>*</sup>          | <No />         | <Yes /><sup>*</sup> | <No />        |
+| Contributions       | Encouraged                   | <No />         | <No />           | Required      |
+
+---
+
+```markdown
+# h1 title test
+## h2 title test
+### h3 title test
+#### h4 title test
+##### h5 title test
+###### h6 title test
+test
+**bold test**
+*italic test*
+[![PIF License](https://img.shields.io/badge/license-PIF-blue)](link-to-license)
+This project is licensed under the [Pay It Forward License (PIF)](/license).
+```
+
+```txt
+Adopting the PIF is a statement of your commitment to the open-source community. Share your decision by:
+```
+
+```ts
+/*
+* This is a test file using famous rock bands
+*/
+
+// Import statement
+import Band from './Band'
+
+// Variable declaration
+const ledZeppelin = new Band('Led Zeppelin')
+
+// Function with destructuring and template literals
+function playSong({ band }: { band: string }) {
+  return `${band} is playing "Stairway to Heaven"`
+}
+
+// Arrow function with array methods
+const rockBands = (bands: string[]) => {
+  let count = 0;
+  bands.forEach(band => {
+    count += 1;
+    console.log(`${band} is rocking!`);
+  });
+  for (const band of bands) {
+    console.log(`${band} is legendary!`);
+  }
+  for (let i = 0; i < bands.length; i++) {
+    console.log(`${bands[i]} is iconic!`);
+  }
+}
+
+// Async function with try-catch
+async function fetchBandInfo(url: string): Promise<any> {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching band info:', error);
+  }
+}
+
+// Generics
+function getBandName<T>(band: T): T {
+  return band;
+}
+
+// Enums
+enum Genre {
+  Rock,
+  Metal,
+  Punk,
+  Blues
+}
+
+// Interface
+interface BandMember {
+  id: number;
+  name: string;
+  instrument?: string;
+}
+
+// Class with constructor
+class RockBand {
+  name: string;
+  constructor(name: string) {
+    this.name = name;
+  }
+  perform() {
+    return `${this.name} is performing live!`;
+  }
+}
+
+// Type assertion
+let someValue: any = "This is a string";
+let strLength: number = (someValue as string).length;
+
+// Union types
+function printId(id: number | string) {
+  console.log(`ID: ${id}`);
+}
+
+// Intersection types
+interface Drummer {
+  drum(): void;
+}
+
+interface Singer {
+  sing(): void;
+}
+
+type SingingDrummer = Drummer & Singer;
+
+const philCollins: SingingDrummer = {
+  drum: () => console.log("Drumming"),
+  sing: () => console.log("Singing")
+};
+
+// Optional chaining
+const band = {
+  name: "Queen",
+  leadSinger: {
+    name: "Freddie Mercury"
+  }
+};
+
+const leadSingerName = band.leadSinger?.name ?? "Unknown";
+
+// Nullish coalescing
+const song = null ?? "Bohemian Rhapsody";
+
+// Export default configuration
+export default defineConfig({
+  site: 'https://rockbands.com',
+  integrations: [mdx(), sitemap()],
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: 'viewport',
+  },
+})
+```
+
+```python
+# Function definition
+def greet(name: str) -> str:
+  return f"Hello, {name}!"
+
+# List comprehension
+squares = [x**2 for x in range(10)]
+
+# Dictionary
+band_info = {
+  "name": "The Beatles",
+  "genre": "Rock",
+  "members": ["John", "Paul", "George", "Ringo"]
+}
+
+# Class definition
+class Musician:
+  def __init__(self, name: str, instrument: str):
+    self.name = name
+    self.instrument = instrument
+
+  def play(self) -> str:
+    return f"{self.name} is playing the {self.instrument}"
+
+# Using the class
+john = Musician("John Lennon", "guitar")
+print(john.play())
+
+# Lambda function
+add = lambda x, y: x + y
+
+# Decorator
+def uppercase_decorator(func):
+  def wrapper(*args, **kwargs):
+    result = func(*args, **kwargs)
+    return result.upper()
+  return wrapper
+
+@uppercase_decorator
+def say_hi(name: str) -> str:
+  return f"Hi, {name}"
+
+print(say_hi("Paul"))
+
+# Exception handling
+try:
+  result = 10 / 0
+except ZeroDivisionError as e:
+  print(f"Error: {e}")
+
+# Generator
+def countdown(n: int):
+  while n > 0:
+    yield n
+    n -= 1
+
+for number in countdown(5):
+  print(number)
+```

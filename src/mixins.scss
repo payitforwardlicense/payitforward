@@ -40,6 +40,10 @@
       color: $color8;
     }
 
+    h6 {
+      color: $color9;
+    }
+
     a {
       @include link($color9, $color1);
     }
@@ -52,7 +56,7 @@
       @include link($color10, $color1);
     }
 
-    p, li, td {
+    p, li, td, th {
       color: $color2;
     }
 
@@ -67,8 +71,9 @@
     li::marker {
       color: $color3;
     }
-    
-    code, pre {
+
+    blockquote {
+      border-color: $color4;
     }
   }
 }
