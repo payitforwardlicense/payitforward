@@ -3,13 +3,14 @@ import { ClientRouter } from 'astro:transitions'
 import '@/reset.css'
 import '@/global.scss'
 import '@/theme.scss'
+import '@/terminalselect.scss'
 const title = Astro.props.frontmatter?.title || Astro.props.title
 const description = Astro.props.frontmatter?.description || Astro.props.description
 const type = Astro.props.frontmatter?.description || Astro.props.type || 'website'
 ---
 
 <!doctype html>
-<html lang="en" theme="cat" class="smooth-disabled">
+<html lang="en" theme="cat" class="smooth-disabled terminalselect-disabled">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -57,15 +58,15 @@ const type = Astro.props.frontmatter?.description || Astro.props.type || 'websit
       window.onscroll = function(){
         //alert('Scrolled')
       }
-      // document.addEventListener('selectionchange', () => {
-      //   const selection = document.getSelection()
-      //   const className = document.documentElement.className.replaceAll(' selecting', '')
-      //   if (selection && selection.toString().length > 0) {
-      //     document.documentElement.className = className + ' selecting'
-      //   } else {
-      //     document.documentElement.className = className
-      //   }
-      // })
+      document.addEventListener('selectionchange', () => {
+        const selection = document.getSelection()
+        const className = document.documentElement.className.replaceAll(' selecting', '')
+        if (selection && selection.toString().length > 0) {
+          document.documentElement.className = className + ' selecting'
+        } else {
+          document.documentElement.className = className
+        }
+      })
     </script>
   </body>
 </html>

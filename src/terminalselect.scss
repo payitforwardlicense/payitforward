@@ -1,0 +1,37 @@
+$terminalGreen: #85F584;
+$terminalBlack: black;
+
+
+.terminalselect.selecting {
+  background-color: $terminalBlack !important;
+  * {
+    color: $terminalGreen  !important;
+  }
+
+  li::marker {
+    color: $terminalGreen !important;
+  }
+
+  a:hover {
+    background-color: $terminalGreen !important;
+    color: $terminalBlack !important;
+  }
+
+  img {
+    filter: grayscale(100%) sepia(100%) saturate(200%) hue-rotate(58deg) brightness(50%) contrast(300%) brightness(300%);
+  }
+
+  img::selection {
+    background-color: rgba($terminalGreen, 1);
+  }
+  
+  *:not(img)::selection {
+    color: rgba($terminalBlack,1);
+    background-color: rgba($terminalGreen, 0.99);
+  }
+  
+  ::-moz-selection {
+    color: $terminalBlack;
+    background: $terminalGreen;
+  }
+}
