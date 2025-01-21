@@ -16,6 +16,7 @@ export default defineConfig({
     clientPrerender: true,
     svg: true,
   },
+  trailingSlash: "never",
   markdown: {
     shikiConfig: {
       wrap: true,

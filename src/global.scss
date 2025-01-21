@@ -44,7 +44,7 @@ h1 + p:has(> img) {
   margin-top: 1.8rem;
 }
 
-h1, h2, h3, h4, h5, h6, p, li, a, code {
+h1, h2, h3, h4, h5, h6, p, li, a, b, strong, pre, th, td, sub, sup, blockquote, code, html {
   line-height: 1.5rem;
   transition: all .3s ease;
   font-family: monospace;

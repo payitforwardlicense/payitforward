@@ -9,7 +9,7 @@ const type = Astro.props.frontmatter?.description || Astro.props.type || 'websit
 ---
 
 <!doctype html>
-<html lang="en" theme="crtgreen" class="smooth-disabled">
+<html lang="en" theme="cat" class="smooth-disabled">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -37,9 +37,9 @@ const type = Astro.props.frontmatter?.description || Astro.props.type || 'websit
       <slot />
     </main>
     <script>
-      //const themes = ['cat', 'candy', 'vibrant', 'catdark', 'catalt', 'test']
+      const themes = ['cat', 'test']
       //const themes = ['lazerwave','solarized', 'radical', 'cat']
-      const themes = ['crtgreen', 'paddy', 'cat']
+      //const themes = ['crtgreen', 'paddy', 'cat']
 
       document.addEventListener('keydown', function(event) {
         if (event.key === 't') {
@@ -54,6 +54,9 @@ const type = Astro.props.frontmatter?.description || Astro.props.type || 'websit
           window.history.back()
         }
       })
+      window.onscroll = function(){
+        //alert('Scrolled')
+      }
       // document.addEventListener('selectionchange', () => {
       //   const selection = document.getSelection()
       //   const className = document.documentElement.className.replaceAll(' selecting', '')
