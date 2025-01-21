@@ -8,14 +8,18 @@ export async function GET() {
     if (data.date > new Date()) return false
     return data.draft !== true
   }
-  const posts = await getCollection('posts', sort)
-  const shop = await getCollection('shop', sort)
-  const items = [...shop, ...posts]
+  const collections = ['posts', 'shop']
+  const allItems = []
+
+  for (const collection of collections) {
+    const items = await getCollection(collection)
+    allItems.push(...items)
+  }
   const result = `  
 <?xml version="1.0" encoding="UTF-8"?>  
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>${siteUrl}/</loc></url>  
-  ${items
+  ${allItems
     .map((item) => {
       const lastMod = (item.data.updatedDate ?? item.data.date).toISOString()
       const loc = item.data.slug ? `/${item.data.slug}` : ''
