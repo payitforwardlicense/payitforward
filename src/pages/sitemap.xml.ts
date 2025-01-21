@@ -12,7 +12,7 @@ export async function GET() {
   const allItems = []
 
   for (const collection of collections) {
-    const items = await getCollection(collection)
+    const items = await getCollection(collection, sort)
     allItems.push(...items)
   }
   const result = `  
