@@ -4,6 +4,8 @@ title: The Pay it Forward License
 ---
 import Header from '@/components/Header.astro'
 import Footer from '@/components/Footer.astro'
+import { fileURLToPath } from 'url'
+export const __dirname = fileURLToPath(import.meta.url)
 
 <Header back />
 
@@ -21,4 +23,4 @@ The software is provided “as is,” without warranty of any kind, express or i
 
 Recipients of the Software should pay it forward by contributing to the open-source community through actions including but not limited to providing code, documentation, tutorials, guides, support, feedback, or promoting open-source projects through advocacy or related efforts that advance innovation and community growth.
 
-<Footer file={import.meta.filename} />
+<Footer file={__dirname} />
