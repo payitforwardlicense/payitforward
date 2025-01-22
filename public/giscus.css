@@ -53,7 +53,7 @@ main {
   --color-canvas-overlay: #313244;
   --color-canvas-inset: #11111b;
   --color-canvas-subtle: #181825;
-  --color-border-default: #45475a;
+  --color-border-default: rgba(0,0,0,0);
   --color-border-muted: #313244;
   --color-neutral-muted: rgb(108 112 134 / 40%);
   --color-accent-fg: #cba6f7;
@@ -80,4 +80,25 @@ main .gsc-comment-box-textarea::placeholder {
 
 main .gsc-loading-image {
   background-image: url("https://giscus.catppuccin.com/assets/loading.gif");
+}
+
+.gsc-comments-count + em, .gsc-comment-box-md-toolbar, .gsc-comment-box-textarea-extras {
+  display: none;
+}
+
+body {
+  font-family: 'Roboto Mono', 'Source Code Pro', Menlo, monospace;
+  line-height: 1.4rem;
+  margin: 0;
+  min-height: 100%;
+  overflow-wrap: break-word;
+}
+
+html {
+  height: 100%;
+  font-size: 16px;
+}
+
+html * {
+  font-size: 14px !important;
 }

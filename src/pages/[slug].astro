@@ -5,6 +5,7 @@ import Header from '@/components/Header.astro'
 import Footer from '@/components/Footer.astro'
 import Post from '@/components/Post.astro'
 import Shop from '@/components/Shop.astro'
+import { repository } from '@/../package.json'
 
 export async function getStaticPaths() {
   const collections = ['posts', 'shop']
@@ -21,6 +22,7 @@ export async function getStaticPaths() {
 
 const { item, type } = Astro.props
 const { Content } = await render(item)
+const theme = `${import.meta.env.PROD ? 'https://payitforwardlicense.com' :  'http://localhost:4321'}/giscus.css`
 ---
 
 <Layout
@@ -38,22 +40,23 @@ const { Content } = await render(item)
     <Post item={item}>
       <Content />
     </Post>
-<script src="https://giscus.app/client.js"
-        data-repo="piffoundation/payitforward"
-        data-repo-id="R_kgDONoqrug"
-        data-category="Articles"
-        data-category-id="DIC_kwDONoqrus4CmO25"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="giscus.css"
-        data-lang="en"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-</script>
+    <script
+      src="https://giscus.app/client.js"
+      data-repo="piffoundation/payitforward"
+      data-repo-id="R_kgDONoqrug"
+      data-category="Articles"
+      data-category-id="DIC_kwDONoqrus4CmO25"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="top"
+      data-theme={theme}
+      data-lang="en"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async>
+    </script>
   }
   <Footer file={item.filePath} />
 </Layout>
