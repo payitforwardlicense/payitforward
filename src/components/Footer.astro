@@ -3,8 +3,12 @@ import childProcess from 'node:child_process'
 import { version, repository } from '@/../package.json'
 import { Github, GitFork, Box, ShoppingBag } from 'lucide-static'
 import Icon from './Icon.astro'
+import { editPath  } from '@/lib/editPath'
 
-const currentPath = Astro.url.pathname && Astro.url.pathname !== '/' ? Astro.url.pathname : 'index'
+const { file } = Astro.props
+const improveFile = editPath(file)
+console.log('asd', improveFile)
+
 const hash = childProcess
   .execSync('git rev-parse --short HEAD')
   .toString()
@@ -16,7 +20,7 @@ const hash = childProcess
   <ul>
     <li><Icon icon={Github} size="14" /> <a href={repository.url}>Join us on github</a></li>
     <li><Icon icon={ShoppingBag} size="14" /> <a href="https://payitforward.printful.me/">Shop &amp; Support</a></li>
-    <li><Icon icon={GitFork} size="14" /> <a href=`${repository.url}/blob/main/src/pages/${currentPath}.mdx`>Improve this page</a></li>
+    <li><Icon icon={GitFork} size="14" /> <a href={improveFile}>Improve this page</a></li>
     <li><Icon icon={Box} size="14" /> v{version} : {hash}</li>
   </p>
 </footer>
