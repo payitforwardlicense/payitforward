@@ -8,6 +8,7 @@ export const editPath = (filePath: string) => {
     .replaceAll(base, '')
     .replaceAll('dist', 'src')
     .replaceAll('.astro.mjs', '.mdx')
-  const improveFile = `${repository.url}/blob/main${currentPath}`
+  const currentPathPart = currentPath ? `/${currentPath}` : ''
+  const improveFile = `${repository.url}/blob/main${currentPathPart}`
   return improveFile
 }
