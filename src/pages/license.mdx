@@ -4,8 +4,9 @@ title: The Pay it Forward License
 ---
 import Header from '@/components/Header.astro'
 import Footer from '@/components/Footer.astro'
-import { fileURLToPath } from 'url'
-export const __dirname = fileURLToPath(import.meta.url)
+// import { fileURLToPath } from 'url'
+// export const __dirname = fileURLToPath(import.meta.url)
+export const __dirname = import.meta.filename
 
 <Header back />
 
