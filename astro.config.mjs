@@ -25,10 +25,10 @@ export default defineConfig({
       theme: 
         // `andromeeda`
         //`aurora-x`
-         `ayu-dark`
+        // `ayu-dark`
         // `catppuccin-frappe`
         // `catppuccin-macchiato`
-        // `catppuccin-mocha`
+        `catppuccin-mocha`
         // `dark-plus`
         // `dracula`
         // `dracula-soft`
